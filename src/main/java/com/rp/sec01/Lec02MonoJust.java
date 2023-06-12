@@ -1,18 +1,27 @@
 package com.rp.sec01;
 
+import java.util.function.Consumer;
+
+import org.reactivestreams.Subscriber;
+
 import reactor.core.publisher.Mono;
 
 public class Lec02MonoJust {
 
+
     public static void main(String[] args) {
+        
 
-        // publisher
-        Mono<Integer> mono = Mono.just(1);
+        Mono<Integer> mon = Mono.just(1);
 
-        System.out.println(mono);
+        Lec02MonoConsumer  referencia = new Lec02MonoConsumer();
 
-        mono.subscribe(i -> System.out.println("Received : " + i));
+        Consumer<? super Integer> myconsumerObjectREf = referencia::objectMethodPrintInteger;
 
-    }
+        mon.subscribe(myconsumerObjectREf);
+        System.out.println("                   ");
 
+        mon.subscribe(Lec02MonoConsumer::staticMethodPrintInteger);
 }
+}
+

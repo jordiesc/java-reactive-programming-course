@@ -7,7 +7,7 @@ public class Lec04MonoEmptyOrError {
 
     public static void main(String[] args) {
 
-        userRepository(20)
+        userRepository(2)
                 .subscribe(
                         Util.onNext(),
                         Util.onError(),

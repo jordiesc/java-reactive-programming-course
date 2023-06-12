@@ -1,5 +1,7 @@
 package com.rp.sec02;
 
+import java.util.Arrays;
+
 import com.rp.courseutil.Util;
 import reactor.core.publisher.Flux;
 
@@ -12,7 +14,9 @@ public class Lec03FluxFromArrayOrList {
                 .subscribe(Util.onNext());*/
 
          Integer[] arr = { 2, 5, 7, 8};
-        Flux.fromArray(arr)
+    
+
+         Flux.fromArray(arr)
                 .subscribe(Util.onNext());
 
 

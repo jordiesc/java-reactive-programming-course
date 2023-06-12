@@ -4,6 +4,7 @@ import com.rp.courseutil.Util;
 import reactor.core.publisher.Mono;
 
 import java.util.concurrent.Callable;
+import java.util.concurrent.Flow.Publisher;
 import java.util.function.Supplier;
 
 public class Lec05MonoFromSupplier {
@@ -14,6 +15,10 @@ public class Lec05MonoFromSupplier {
        // Mono<String> mono = Mono.just(getName());
 
         Supplier<String> stringSupplier = () -> getName();
+
+     
+        Integer entero = new Integer(3);
+        Mono.from(null);
         Mono<String> mono = Mono.fromSupplier(stringSupplier);
         mono.subscribe(
                 Util.onNext()

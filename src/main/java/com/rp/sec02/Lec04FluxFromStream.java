@@ -19,6 +19,7 @@ public class Lec04FluxFromStream {
         Flux<Integer> integerFlux = Flux.fromStream(() -> list.stream());
 
         integerFlux
+                
                 .subscribe(
                         Util.onNext(),
                         Util.onError(),

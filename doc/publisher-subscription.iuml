@@ -1,0 +1,21 @@
+@startuml
+interface Publisher<T> {
+    +subscribe(subscriber: Subscriber<T>): void
+}
+
+interface Subscriber<T> {
+    +onSubscribe(subscription: Subscription): void
+    +onNext(data: T): void
+    +onError(error: Throwable): void
+    +onComplete(): void
+}
+
+interface Subscription {
+    +request(n: long): void
+    +cancel(): void
+}
+
+Subscriber  <-- Publisher
+Subscription <--  Publisher : use
+@enduml
+
